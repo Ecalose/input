@@ -1,6 +1,6 @@
 module gitee.com/baixudong/input
 
-go 1.20
+go 1.21.0
 
 require gitee.com/baixudong/blog v0.0.0-20230726070237-ee8a30e182ac
 
