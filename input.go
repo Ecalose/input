@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"gitee.com/baixudong/blog"
+	"github.com/gospider007/blog"
 )
 
 func Print(val any, tip ...any) error {
