@@ -16,14 +16,14 @@ func Print(val any, tip ...any) error {
 	return err
 }
 func Option(title, tip string, option map[string]string, defVals ...string) (string, error) {
-	log.Print(blog.Color(1, 0, title, "\r\n"))
+	log.Print(blog.Color(1, title, "\r\n"))
 	for k, v := range option {
-		fmt.Print(blog.Color(3, 0, k), " : ", v, "\r\n")
+		fmt.Print(blog.Color(3, k), " : ", v, "\r\n")
 	}
 	if len(defVals) > 0 {
 		_, ok := option[defVals[0]]
 		if ok {
-			log.Print(blog.Color(2, 0, "默认值为: ", defVals[0], "\r\n"))
+			log.Print(blog.Color(2, "默认值为: ", defVals[0], "\r\n"))
 		}
 	}
 	var val string
@@ -50,6 +50,6 @@ func Option(title, tip string, option map[string]string, defVals ...string) (str
 				return val, nil
 			}
 		}
-		log.Print(blog.Color(1, 0, "请输入正确的选项！！！", "\r\n"))
+		log.Print(blog.Color(1, "请输入正确的选项！！！", "\r\n"))
 	}
 }
