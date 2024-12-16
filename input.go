@@ -7,13 +7,11 @@ import (
 	"github.com/gospider007/blog"
 )
 
-func Print(val any, tip ...any) error {
+func Input(tip ...any) (string, error) {
 	fmt.Print(tip...)
-	_, err := fmt.Scanln(val)
-	if err != nil {
-		return err
-	}
-	return err
+	var val string
+	_, err := fmt.Scanln(&val)
+	return val, err
 }
 func Option(title, tip string, option map[string]string, defVals ...string) (string, error) {
 	log.Print(blog.Color(1, title, "\r\n"))
@@ -26,9 +24,8 @@ func Option(title, tip string, option map[string]string, defVals ...string) (str
 			log.Print(blog.Color(2, "默认值为: ", defVals[0], "\r\n"))
 		}
 	}
-	var val string
 	for {
-		if err := Print(&val, tip); err != nil {
+		if val, err := Input(tip); err != nil {
 			if err.Error() != "unexpected newline" {
 				return val, err
 			} else if len(defVals) > 0 {
