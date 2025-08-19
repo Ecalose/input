@@ -2,7 +2,7 @@ module github.com/gospider007/input
 
 go 1.25
 
-require github.com/gospider007/blog v0.0.0-20250302134054-8afc12c2a9a7
+require github.com/gospider007/blog v0.0.0-20250815030743-f2af6b9013ab
 
 require (
 	go.uber.org/multierr v1.11.0 // indirect
