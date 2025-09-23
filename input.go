@@ -8,7 +8,7 @@ import (
 )
 
 func Input(tip ...any) (string, error) {
-	fmt.Print(tip...)
+	fmt.Println(tip...)
 	var val string
 	_, err := fmt.Scanln(&val)
 	return val, err
